@@ -2,6 +2,11 @@ body{
     background-color: #fcfcfc;
     margin: 0; padding: 0;
     font-family: 'Raleway', sans-serif;
+    background-image: url('../assets/background-forms.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    
 }
 header{
     background-color: #B8D5D9;
@@ -87,6 +92,7 @@ main{
     width: 1000px;
     border: #D97184 2px solid;
     flex-wrap: wrap;
+    background-color: #fcfcfc;
 }
 #form article img{
     display: flex;
