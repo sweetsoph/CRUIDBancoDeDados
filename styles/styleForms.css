@@ -1,0 +1,140 @@
+body{
+    background-color: #fcfcfc;
+    margin: 0; padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+header{
+    background-color: #B8D5D9;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#logo, nav{
+    display: flex;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
+    align-items: center;
+}
+#logo a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    height: 70px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    background-color: #B8D5D9;
+}
+#logo a:hover{
+    opacity: 0.8;
+}
+nav{
+    font-size: 25px;
+    list-style: none;
+}
+li a{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0px 40px;
+    height: 70px;
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+    transition: 0.2s;
+    background-color: #A3BCBF;
+    cursor: pointer;
+}
+ul li a:hover{
+    transition: 0.5s;
+}
+ul{
+    display: none;
+}
+#cadastro:hover > ul, #consulta:hover > ul{
+    position: absolute;
+    margin: 0; padding: 0;
+    display: inline-block;
+    background-color: #B8D5D9;
+    list-style: none;
+}
+
+/*
+
+
+
+MAIN
+
+
+*/
+
+main{
+    display: flex;
+    height: calc(100vh - 70px);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    border: #D97184 2px solid;
+    flex-wrap: wrap;
+}
+#form article img{
+    display: flex;
+}
+#form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 575px;
+}
+form #form-cad{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.form-group{
+    justify-content: right;
+    display: flex;
+    width: 200px;
+}
+
+#numCliente{
+    width: 50px;
+}
+@media(max-width: 1004px){
+    #form article img{
+        display: flex;
+        width: 300px;
+    }
+    #form{
+        width: 900px;
+    }
+}
+@media(max-width: 879px){
+    #form{
+        width: 300px;
+    }
+}
+@media(max-width:637px){
+    header{
+        height: 50px;
+        font-size: 18px;
+    }
+    #logo a{
+        height: 50px;
+    }
+    li a{
+        height: 50px;
+    }
+}
