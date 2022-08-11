@@ -5,12 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <title>CADASTRO DE FUNCIONÁRIO</title>
-    <script src='../buscaCep.js'></script>
     <link href="../styles/styleForms.css" rel="stylesheet" />
-    <script type="text/javascript" src="../scripts/script.js"></script>
+	<link href="../styles/formCadFuncionario.css" rel="stylesheet" />
+
+    <title>CADASTRO DE FUNCIONÁRIO</title>
+
+    <script src='../buscaCep.js'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -54,19 +59,19 @@
                     <div id='form-cad'>
                         <div class='form-group'>
                             <label>Nome: </label>
-                            <input type="text" id="nomeFuncionario" name="nomeFuncionario" required>
+                            <input type="text" id="nomeFuncionario" name="nomeFuncionario" maxlength="50" required>
                         </div>
                         <div class='form-group'>
                             <label>CPF: </label>
-                            <input type="text" id="cpfFuncionario" name="cpfFuncionario" required>
+                            <input type="text" id="cpfFuncionario" name="cpfFuncionario" onkeypress="$(this).mask('000.000.000-00')" maxlength='11' required>
                         </div>
                         <div class='form-group'>
                             <label>RG: </label>
-                            <input type="text" id="rgFuncionario" name="rgFuncionario" required>
+                            <input type="text" id="rgFuncionario" name="rgFuncionario" onkeypress="$(this).mask('00.000.000-0')" maxlength='9' required>
                         </div>
                         <div class='form-group'>
                             <label>Data de Admissão: </label>
-                            <input type="text" id="dtAdmissao" name="dtAdmissao" required>
+                            <input type="text" id="dtAdmissao" name="dtAdmissao" placeholder='(AAAA/MM/DD)' onkeypress="$(this).mask('0000/00/00')" maxlength='8' required>
                         </div>
                         <div class='form-group'>
                             <label>Salário: </label>
@@ -74,7 +79,8 @@
                         </div>
                         <div class='form-group'>
                             <label>CEP: </label>
-                            <input type="text" id="cep" name="cepFuncionario" onblur="pesquisacep(this.value);" required>
+                            <input type="text" id="cep" name="cepFuncionario" onblur="pesquisacep(this.value);" onkeypress="$(this).mask('00000-000')" maxlength="
+                            8" pattern="[0-9]+$" required>
                         </div>
                         <div class='form-group'>
                             <label>Rua: </label>
@@ -94,11 +100,11 @@
                         </div>
                         <div class='form-group'>
                             <label>Nº: </label>
-                            <input type="text" id="numFuncionario" name="numFuncionario" required>
+                            <input type="text" id="numFuncionario" name="numFuncionario" onkeypress="$(this).mask('#')" pattern="[0-9]+$" required>
                         </div>
                         <div class='form-group'>
                             <label>Celular: </label>
-                            <input type="text" id="celularFuncionario" name="celularFuncionario" required>
+                            <input type="text" id="celularFuncionario" name="celularFuncionario" onkeypress="$(this).mask('(00) 90000-0000')" required>
                         </div>
                         <div class='form-group'>
                             <label>Email: </label>

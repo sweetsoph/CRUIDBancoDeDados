@@ -1,0 +1,15 @@
+section article img{
+    width: 400px;
+    height: 400px;
+}
+@media(max-width: 996px){
+    #form{
+        width: 300px;
+    }
+    section article img{
+        width: 400px;
+    }
+    main{
+        height: 180vh;
+    }
+}

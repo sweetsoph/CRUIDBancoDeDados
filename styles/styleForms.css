@@ -111,12 +111,12 @@ form #form-cad{
 .form-group{
     justify-content: right;
     display: flex;
-    width: 200px;
+    width: 260px;
     margin: 5px;
+    align-items: center;
 }
-
-#numCliente{
-    width: 50px;
+.form-group label{
+    margin: 0px 6px;
 }
 .form-button{
     background-color: #F7C1C1;

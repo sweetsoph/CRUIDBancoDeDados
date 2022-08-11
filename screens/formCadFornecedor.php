@@ -4,17 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<link href="../styles/styleForms.css" rel="stylesheet" />
-	<link href="../styles/formCadCliente.css" rel="stylesheet" />
+	<link href="../styles/formCadFornecedor.css" rel="stylesheet" />
 
-	<title>CADASTRO DE CLIENTE</title>
-	
+	<title>CADASTRO DE FORNECEDOR</title>
+
 	<script src='../buscaCep.js'></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </head>
 
@@ -54,53 +54,63 @@
 				<img src="https://i.imgur.com/acOlOuc.gif">
 			</article>
 			<article id='form-container'>
-				<h1>Cadastro de Cliente</h1>
+				<h1>Cadastro de Fornecedor</h1>
 				<form action="#" method="POST">
 					<div id='form-cad'>
 						<div class='form-group'>
-							<label>Nome: </label>
-							<input type="text" id="nomeCliente" name="nomeCliente" maxlength="50" required>
+							<label>Nome da Empresa: </label>
+							<input type="text" id="nomeEmpresa" name="nomeEmpresa" maxlength="50" required>
+						</div>
+                        <div class='form-group'>
+							<label>Nome para Contato: </label>
+							<input type="text" id="nomeContato" name="nomeContato" maxlength="50" required>
 						</div>
 						<div class='form-group'>
-							<label>CPF: </label>
-							<input type="text" id="cpfCliente" name="cpfCliente" onkeypress="$(this).mask('000.000.000-00')" maxlength='11' required>
+							<label>Produto: </label>
+							<input type="text" id="produto" name="produto" required>
 						</div>
 						<div class='form-group'>
-							<label>RG: </label>
-							<input type="text" id="rgCliente" name="rgCliente" onkeypress="$(this).mask('00.000.000-0')" maxlength='9' required>
+							<label>CNPJ: </label>
+							<input type="text" id="cnpj" name="cnpj" onkeypress="$(this).mask('00.000.000/0000-00')" maxlength="
+                            14" pattern="[0-9]+$" required>
+						</div>
+                        <div class='form-group'>
+							<label>Inscrição Estadual: </label>
+							<input type="text" id="ie" name="ie" onkeypress="$(this).mask('000.000.000.000')" maxlength="
+                            12" pattern="[0-9]+$" required>
 						</div>
 						<div class='form-group'>
 							<label>CEP: </label>
-							<input type="text" id="cep" name="cepCliente" onblur="pesquisacep(this.value);" onkeypress="$(this).mask('00000-000')" maxlength="
+							<input type="text" id="cep" name="cepFornecedor" onblur="pesquisacep(this.value);" onkeypress="$(this).mask('00000-000')" maxlength="
                             8" pattern="[0-9]+$" required>
 						</div>
 						<div class='form-group'>
 							<label>Rua: </label>
-							<input type="text" id="rua" name="ruaCliente" required>
+							<input type="text" id="rua" name="ruaFornecedor" required>
 						</div>
 						<div class='form-group'>
 							<label>Bairro: </label>
-							<input type="text" id="bairro" name="bairroCliente" required>
+							<input type="text" id="bairro" name="bairroFornecedor" required>
 						</div>
 						<div class='form-group'>
 							<label>Cidade: </label>
-							<input type="text" id="cidade" name="cidadeCliente" required>
+							<input type="text" id="cidade" name="cidadeFornecedor" required>
 						</div>
 						<div class='form-group'>
 							<label>Estado: </label>
-							<input type="text" id="uf" name="ufCliente" required>
+							<input type="text" id="uf" name="ufFornecedor" required>
 						</div>
 						<div class='form-group'>
 							<label>Nº: </label>
-							<input type="text" id="numCliente" name="numCliente" onkeypress="$(this).mask('#')" pattern="[0-9]+$" maxlength="10" required>
+							<input type="text" id="numFornecedor" name="numFornecedor" onkeypress="$(this).mask('#')" pattern="[0-9]+$" required>
 						</div>
 						<div class='form-group'>
 							<label>Celular: </label>
-							<input type="text" id="celularCliente" name="celularCliente" onkeypress="$(this).mask('(00) 90000-0000')" maxlength="11" required>
+							<input type="text" id="celularFornecedor" name="celularFornecedor" onkeypress="$(this).mask('(00) 90000-0000')" required>
 						</div>
 						<div class='form-group'>
 							<label>Email: </label>
-							<input type="text" id="emailCliente" name="emailCliente" maxlength="40" required>
+							<input type="text" id="emailFornecedor" name="emailFornecedor" required>
 						</div>
 					</div>
 					<div>
@@ -119,24 +129,28 @@
 <?php
 
 if (!empty($_POST)) {
-	$nome = $_POST['nomeCliente'];
-	$cpf = $_POST['cpfCliente'];
-	$rg = $_POST['rgCliente'];
-	$cep = $_POST['cepCliente'];
-	$num = $_POST['numCliente'];
-	$celular = $_POST['celularCliente'];
-	$email = $_POST['emailCliente'];
+	$nmEmpresa = $_POST['nomeEmpresa'];
+    $nmContato = $_POST['nomeContato'];
+    $produto = $_POST['produto'];
+	$cnpj = $_POST['cnpj'];
+	$ie = $_POST['ie'];
+	$cep = $_POST['cepFornecedor'];
+	$num = $_POST['numFornecedor'];
+	$celular = $_POST['celularFornecedor'];
+	$email = $_POST['emailFornecedor'];
 
 	include_once('../conexao.php');
 
 	try {
 
-		$stmt = $conn->prepare("INSERT INTO cliente (nome, cpf, rg, cep, numero, celular, email)
-	  	                      VALUES (:nome, :cpf, :rg, :cep, :numero, :celular, :email)");
+		$stmt = $conn->prepare("INSERT INTO fornecedor (nmEmpresa, nmContato, produto, cnpj, ie, cep, numero, celular, email)
+	  	                      VALUES (:nmEmpresa, :nmContato, :produto, :cnpj, :ie, :cep, :numero, :celular, :email)");
 
-		$stmt->bindParam(':nome', $nome);
-		$stmt->bindParam(':cpf', $cpf);
-		$stmt->bindParam(':rg', $rg);
+		$stmt->bindParam(':nmEmpresa', $nmEmpresa);
+        $stmt->bindParam(':nmContato', $nmContato);
+        $stmt->bindParam(':produto', $produto);
+		$stmt->bindParam(':cnpj', $cnpj);
+		$stmt->bindParam(':ie', $ie);
 		$stmt->bindParam(':cep', $cep);
 		$stmt->bindParam(':numero', $num);
 		$stmt->bindParam(':celular', $celular);
