@@ -97,8 +97,8 @@
 						</div>
 					</div>
 					<div>
-						<input type="submit" name="Cadastrar">
-						<input type="reset" name="Limpar">
+						<input type="submit" name="Cadastrar" class="form-button">
+						<input type="reset" name="Limpar" class="form-button">
 					</div>
 				</form>
 			</article>

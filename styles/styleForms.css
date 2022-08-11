@@ -1,15 +1,14 @@
 body{
-    background-color: #fcfcfc;
+    background-color: #CCD9DB;
     margin: 0; padding: 0;
     font-family: 'Raleway', sans-serif;
-    background-image: url('../assets/background-forms.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
     
 }
 header{
-    background-color: #B8D5D9;
+    background-color: #DF999D;
     display: flex;
     height: 70px;
     width: 100%;
@@ -32,14 +31,14 @@ header{
     width: 200px;
     align-items: center;
     justify-content: center;
-    background-color: #B8D5D9;
+    background-color: #DF999D;
 }
 #logo a:hover{
     opacity: 0.8;
 }
 nav{
-    font-size: 25px;
     list-style: none;
+    background-color: #DF999D;
 }
 li a{
     font-size: 20px;
@@ -52,7 +51,7 @@ li a{
 }
 li a:hover{
     transition: 0.2s;
-    background-color: #A3BCBF;
+    background-color: #D97184;
     cursor: pointer;
 }
 ul li a:hover{
@@ -65,7 +64,7 @@ ul{
     position: absolute;
     margin: 0; padding: 0;
     display: inline-block;
-    background-color: #B8D5D9;
+    background-color: #DF999D;
     list-style: none;
 }
 
@@ -80,7 +79,7 @@ MAIN
 
 main{
     display: flex;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -113,10 +112,22 @@ form #form-cad{
     justify-content: right;
     display: flex;
     width: 200px;
+    margin: 5px;
 }
 
 #numCliente{
     width: 50px;
+}
+.form-button{
+    background-color: #F7C1C1;
+    border: #D97184 2px solid;
+    border-radius: 30px;
+    height: 30px;
+    width: 80px;
+}
+.form-button:hover{
+    background-color: #f1afaf;
+    cursor: pointer;
 }
 @media(max-width: 1004px){
     #form article img{
@@ -131,16 +142,30 @@ form #form-cad{
     #form{
         width: 300px;
     }
+    main{
+        height: 130vh;
+    }
 }
 @media(max-width:637px){
     header{
         height: 50px;
         font-size: 18px;
+        justify-content: center;
     }
     #logo a{
         height: 50px;
     }
     li a{
         height: 50px;
+        font-size: 15px;
+    }
+    li{
+        width: 80%;
+        text-align: center;
+    }
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
     }
 }
